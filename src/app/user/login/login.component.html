@@ -1,9 +1,8 @@
 <div class="main-wrapper">
-  <section class="login-container">
+  <mat-card class="login-container">
     <img class="logo" src="./../../../../assets/img/logo.svg" title="Logo" alt="Logo">
-    <h2>Welcome back</h2>
-    <p class="intro-text">Login to your account to access your personal plans and goals.</p>
-
+    <h2 class="intro-title">Welcome back</h2>
+    <p class="intro-text">Login to your account to access your classes</p>
 
     <form [formGroup]="signInForm" (ngSubmit)="signIn()" class="auth-form">
       <mat-form-field [formGroup]="signInForm" appearance="standard">
@@ -29,14 +28,14 @@
       <div class="btn-area">
         <button class="btn-primary" type="submit">Login</button>
         <br>
-        <button type="button" class="text-link">Sign up for an account</button>
+        <button type="button" class="text-link" routerLink="../signup">Sign up for an account</button>
         <!-- <p>Or login with a Social Account</p>
         <button class="btn-secondary" (click)="googleLogin()">Connect with Google</button> -->
       </div>
 
     </form>
 
-  </section>
+  </mat-card>
   <section class="photo-container">
     
   </section>

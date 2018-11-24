@@ -159,8 +159,7 @@ p {
     letter-spacing: 1px;
     line-height: 1.6;
 
-    &.section-text {
-        width: 100%;
+    &.intro-text {
         margin: 0 auto;
         font-size: 16px;
         color: $text-black;
@@ -302,10 +301,12 @@ ul {
 // Mat Cards
 
 mat-card {
+    border-radius: 10px!important;
+    background: #fff;
+    box-shadow: $card-shadow!important;
+
     &.dark-card {
-        background: $black!important;
-        box-shadow: $card-shadow;
-        border-radius: 5px;
+        background: $black;
         padding: 20px 1.5em;
     }
 }
@@ -315,7 +316,9 @@ mat-card {
 // Forms
 
 form {
-    mat-form-field {
+    .mat-form-field {
+        width: 80%;
+        margin: 0 auto;
         input, ::placeholder {
             font-family: $main-font;
             font-size: 16px;
