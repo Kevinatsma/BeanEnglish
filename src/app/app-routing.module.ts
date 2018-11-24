@@ -8,19 +8,17 @@ import { from } from 'rxjs';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'login',
+    redirectTo: 'classroom',
     pathMatch: 'full'
   },
   // {path: '**', redirectTo: '/login', pathMatch: 'full'},
   {
     path: 'login',
-    component: LoginComponent,
-    // canActivate: [AuthGuard]
+    component: LoginComponent
   },
   {
     path: 'signup',
-    component: SignupComponent,
-    // canActivate: [AuthGuard]
+    component: SignupComponent
   }
 ];
 

@@ -35,6 +35,9 @@
             .mat-form-field:nth-child(2) {
                 margin-top: -25px;
             }
+            input {
+                border-radius: 0px!important;
+            }
         }
 
         .btn-area {
@@ -56,8 +59,10 @@
 @media only screen and (max-width: 768px) {
     .main-wrapper {
         background: #fff;
-        height: 100%;
+        height: auto;
+        min-height: 100vh;
         justify-content: flex-start;
+        padding: 0.5em 0;
 
         mat-card.login-container {
             width: 100%;
