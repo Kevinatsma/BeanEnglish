@@ -1,0 +1,77 @@
+@import '_master';
+
+.main-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    mat-card.login-container {
+        width: 40%;
+        height: auto;
+        padding: 3em 1em;
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: flex-start;
+        align-items: center;
+
+        img.logo {
+            width: 45%;
+            height: auto;
+        }
+
+        h2.intro-title {
+            margin-top: 40px;
+        }
+
+        p.intro-text {
+            text-align: center;
+            width: 80%;
+        }
+
+        form {
+            @extend %flex-column-center;
+            width: 80%;
+
+            .mat-form-field:nth-child(2) {
+                margin-top: -25px;
+            }
+        }
+
+        .btn-area {
+            margin-top: 35px;
+            text-align: center;
+
+            .text-link {
+                margin-top: 20px;
+                font-weight: $semi-bold;
+            }
+
+            p.light-text {
+                color: $grey;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .main-wrapper {
+        background: #fff;
+        height: 100%;
+        justify-content: flex-start;
+
+        mat-card.login-container {
+            width: 100%;
+            background: transparent;
+            box-shadow: none!important;
+            padding: 2em 1em;
+
+            img.logo {
+                width: 60%;
+            }
+
+            form {
+                width: 90%;
+            }
+        }
+    }
+}
