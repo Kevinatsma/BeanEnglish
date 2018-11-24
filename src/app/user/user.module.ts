@@ -5,7 +5,7 @@ import { RouterModule } from '@angular/router';
 import { UserListComponent } from './user-list/user-list.component';
 import { UserListItemComponent } from './user-list-item/user-list-item.component';
 import { LoginComponent } from './login/login.component';
-import { SignupComponent } from './../core/auth/signup/signup.component';
+import { SignupComponent } from './signup/signup.component';
 import { AuthService } from '../core/auth/auth.service';
 
 @NgModule({
@@ -20,7 +20,7 @@ import { AuthService } from '../core/auth/auth.service';
     CommonModule,
     SharedModule
   ],
-  exports:  [
+  exports: [
     UserListComponent,
     UserListItemComponent,
     LoginComponent,

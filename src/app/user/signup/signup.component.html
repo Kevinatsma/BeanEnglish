@@ -1,12 +1,12 @@
 <div class="main-wrapper">
   <mat-card class="login-container">
     <img class="logo" src="./../../../../assets/img/logo.svg" title="Logo" alt="Logo">
-    <h2 class="intro-title">Welcome back</h2>
-    <p class="intro-text">Login to your account to access your classes</p>
+    <h2 class="intro-title">Hey new student!</h2>
+    <p class="intro-text">Sign up for an account to access your personal classroom where you can learn English in a visual way and at your own pace.</p>
 
-    <form [formGroup]="signInForm" (ngSubmit)="signIn()" class="auth-form">
-      <mat-form-field [formGroup]="signInForm" appearance="standard">
-        <input type="text" matInput placeholder="E-mail address" formControlName="email" 
+    <form [formGroup]="signUpForm" (ngSubmit)="signUp()" class="auth-form">
+      <mat-form-field appearance="standard">
+        <input type="text" matInput placeholder="What's your email?" formControlName="email" 
                [class.active]="!email.valid && email.touched" autocomplete="off" required
         >
         <mat-error class="input-error" *ngIf="!email.dirty">This is <strong>required</strong></mat-error>
@@ -14,14 +14,10 @@
       </mat-form-field>
 
       <mat-form-field appearance="standard">
-        <input class="form-input" type="password" matInput placeholder="Password" [type]="hide ? 'password' : 'text'" 
+        <input class="form-input" type="password" matInput placeholder="Choose a password.." [type]="hide ? 'password' : 'text'" 
         formControlName="password" [class.active]="!password.valid && password.touched" 
         autocomplete="new-password" required
         >
-        <!-- <mat-icon matSuffix (click)="hide = !hide">{{ hide ? 'visibility' : 'visibility_off'}}</mat-icon> -->
-        <mat-hint class="forgot-password" align="end">
-          <a class="small-text" routerLink="/reset-password">Forgot password?</a>
-        </mat-hint>
         <mat-error class="input-error" *ngIf="!password.dirty">This is <strong>required</strong></mat-error>
         <mat-error class="input-error" *ngIf="password.errors?.minlength"><strong>Not enough</strong> characters, try harder!</mat-error>
         <mat-error class="input-error" *ngIf="password.errors?.maxlength">Too <strong>much</strong> characters, slow down there.</mat-error>
@@ -29,11 +25,14 @@
       </mat-form-field>
 
       <div class="btn-area">
-        <button class="btn-primary" type="submit">Login</button>
+        <button class="btn-primary" type="submit">Sign up</button>
+        <p>- or -</p>
+        <button type="button" class="btn-icon-left" (click)="googleLogin()">
+          <i class="fab fa-google"></i>
+          Connect with Google
+        </button>
         <br>
-        <button type="button" class="text-link" routerLink="../signup">Sign up for an account</button>
-        <!-- <p>Or login with a Social Account</p>
-        <button class="btn-secondary" (click)="googleLogin()">Connect with Google</button> -->
+        <button type="button" class="text-link" routerLink="../login">I already have an account</button>
       </div>
 
     </form>

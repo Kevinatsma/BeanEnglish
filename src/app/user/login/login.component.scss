@@ -23,19 +23,26 @@
             margin-top: 40px;
         }
 
+        p.intro-text {
+            text-align: center;
+            width: 80%;
+        }
+
         form {
             @extend %flex-column-center;
             width: 80%;
 
             .mat-form-field:nth-child(2) {
-                margin-top: -30px;
+                margin-top: -25px;
             }
         }
 
         .btn-area {
-            margin-top: 40px;
+            margin-top: 35px;
+            text-align: center;
             .text-link {
-                margin-top: 15px;
+                margin-top: 20px;
+                font-weight: $semi-bold;
             }
         }
     }
@@ -56,10 +63,6 @@
 
             form {
                 width: 90%;
-
-                .mat-form-field:nth-child(2) {
-                    margin-top: -20px;
-                }
             }
         }
     }

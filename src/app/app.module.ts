@@ -16,6 +16,7 @@ import { environment } from '../environments/environment';
 import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
 import { UserModule } from './user/user.module';
+import { ClassroomModule } from './classroom/classroom.module';
 
 @NgModule({
   imports: [
@@ -28,7 +29,8 @@ import { UserModule } from './user/user.module';
     AngularFireStorageModule,
     CoreModule,
     SharedModule,
-    UserModule
+    UserModule,
+    ClassroomModule
   ],
   providers: [],
   bootstrap: [AppComponent],

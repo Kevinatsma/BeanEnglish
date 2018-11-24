@@ -2,16 +2,17 @@
 // Imports
 // @import url('https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,600,700');
 @import url('https://fonts.googleapis.com/css?family=Assistant:400,600,700,800');
+@import url('https://fonts.googleapis.com/css?family=Muli:300,400,600,800');
 
 // Fonts
-$main-font:'Assistant', sans-serif;
+$main-font:'Muli', sans-serif;
 $title-font: $main-font;
 // $title-font: 'Josefin Sans', sans-serif;
 
 $light: 300;
 $regular: 400;
 $semi-bold: 600;
-$bold: 700;
+$bold: 800;
 
 // Colors
 $primary-color: #9EE2D0;
@@ -23,7 +24,8 @@ $brand-accent: #B687E2;
 $brand-accent-light: lighten($brand-accent, 4%);
 
 $brand-warning: $secondary-color;
-$brand-danger: #FC5C65;
+// $brand-danger: #FC5C65;
+$brand-danger: $brand-accent;
 
 $black: #252220;
 $grey: #7A7877;

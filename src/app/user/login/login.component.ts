@@ -29,7 +29,8 @@ export class LoginComponent implements OnInit {
         '',
         [
           Validators.pattern('^(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+)$'),
-          Validators.minLength(6)
+          Validators.minLength(6),
+          Validators.maxLength(25)
         ]
       ]
     });
@@ -45,15 +46,10 @@ export class LoginComponent implements OnInit {
   }
 
   signIn() {
-
     return this.auth
       .emailSignIn(this.email.value, this.password.value)
-      .then(user => {
-        if (this.signInForm.valid) {
-          this.router.navigate(['/dashboard']);
-        } else {
-          alert('You don\'t have an account!');
-        }
+      .then(() => {
+        this.router.navigate(['/classroom']);
       });
   }
 

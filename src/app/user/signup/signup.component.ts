@@ -3,13 +3,13 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 import { Observable } from 'rxjs';
-import { AuthService } from './../auth.service';
+import { AuthService } from './../../core/auth/auth.service';
 import { AngularFirestoreDocument, AngularFirestore } from 'angularfire2/firestore';
 
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
-  styleUrls: ['./signup.component.scss']
+  styleUrls: ['./signup.component.scss', './../login/login.component.scss']
 })
 export class SignupComponent implements OnInit {
   signUpForm: FormGroup;
@@ -55,5 +55,13 @@ export class SignupComponent implements OnInit {
           this.signUpForm.reset();
         }
       });
+  }
+
+  googleLogin() {
+    return this.auth.googleLogin();
+  }
+
+  redirect() {
+    this.router.navigate(['classroom']);
   }
 }
