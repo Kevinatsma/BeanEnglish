@@ -1,7 +1,67 @@
-<div class="side-bar-container">
-    <section class="profile-header">
-        <div class="close-menu">
-            
+
+<button class="toggle-btn" (click)="closeMenu()" *ngIf="sidebarActive === true">
+    <img src="./../../../assets/img/icons/side-bar/arrow-back.svg">
+</button>
+<button class="toggle-btn closed" (click)="openMenu()" *ngIf="sidebarActive ===  false">
+    <img src="./../../../assets/img/icons/side-bar/arrow-back.svg">
+</button>
+
+<div class="side-bar-container" *ngIf="sidebarActive">
+    <section class="profile-header" *ngIf="(auth.user | async) || {} as user">
+        <div class="profile-pic" [ngStyle]="{background: 'url(' + user.photoURL + ')'}"></div>
+
+
+        <div class="text-container">
+            <h2>{{user.displayName || user.email}}</h2>
+            <p class="subtitle-text">Level: <!--{{user.level}}--> 2</p>
         </div>
+
     </section>
+    <section class="link-wrapper important-links">
+        <h5>Important</h5>
+        <button class="sidebar-icon-link" type="link" routerLink="../" routerLinkActive="active">
+            <i class='fas fa-tachometer-alt'></i>
+            Overview
+        </button>
+        <button class="sidebar-icon-link" type="link" routerLink="../results" routerLinkActive="active">
+            <i class="fas fa-graduation-cap"></i>
+            My Results
+        </button>
+        <button class="sidebar-icon-link" type="link" routerLink="../achievements" routerLinkActive="active">
+            <i class='fas fa-trophy'></i>
+            Achievements
+        </button>
+        <button class="sidebar-icon-link" type="link" routerLink="../user-chat" routerLinkActive="active">
+            <i class='fas fa-comment-alt'></i>
+            Chat
+        </button>
+    </section>
+
+    <section class="link-wrapper settings">
+        <h5>Settings</h5>
+        <button class="sidebar-icon-link" type="link" routerLink="../my-account" routerLinkActive="active">
+            <i class='fas fa-user'></i>
+            My account
+        </button>
+        <button class="sidebar-icon-link" type="link" routerLink="../subscriptions" routerLinkActive="active">
+            <i class="fas fa-dollar-sign"></i>
+            Subscriptions
+        </button>
+        <button class="sidebar-icon-link" type="link" routerLink="../preferences" routerLinkActive="active">
+            <i class='fas fa-cogs'></i>
+            Preferences
+        </button>
+    </section>
+
+    <section class="link-wrapper settings">
+        <h5>Show some love</h5>
+        <button class="sidebar-icon-link" type="link" routerLink="../recommend-us" routerLinkActive="active">
+            <i class='fas fa-thumbs-up'></i>
+            Recommend us
+        </button>
+    </section>
+    
+    <div class="btn-area">
+        <button class="btn-accent-outline" (click)="signOut()">Sign out</button>
+    </div>
 </div>

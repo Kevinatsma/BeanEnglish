@@ -47,7 +47,7 @@ export class AuthService {
   private oAuthLogin(provider) {
     return this.afAuth.auth.signInWithPopup(provider)
       .then((credential) => {
-        this.updateUserData(credential.user);
+        this.setUser(credential.user);
       })
       .then(() => {
         this.ngZone.run(() => this.router.navigate(['/classroom']));
@@ -55,7 +55,7 @@ export class AuthService {
       .catch(error => console.log(error.message));
   }
 
-  private updateUserData(user) {
+  private setUser(user) {
     // Sets user data to firestore on login
     const userRef: AngularFirestoreDocument<any> = this.afs.doc(`users/${user.uid}`);
     const data: User = {
@@ -67,7 +67,8 @@ export class AuthService {
         subscriber: true,
         editor: false,
         admin: false
-      }
+      },
+      signUpDate: new Date()
     };
     return userRef.set(data, { merge: true });
   }
@@ -93,7 +94,7 @@ export class AuthService {
   emailSignUp(email: string, password: string) {
     return this.afAuth.auth.createUserWithEmailAndPassword(email, password)
       .then((credential) => {
-        this.updateUserData(credential.user);
+        this.setUser(credential.user);
       })
       .then(() => console.log('Welcome, your account has been created!'))
       .then(user => {
@@ -106,7 +107,7 @@ export class AuthService {
   signOut() {
     this.afAuth.auth.signOut()
       .then(() => {
-        this.router.navigate(['/']);
+        this.router.navigate(['../../']);
       }
     );
   }

@@ -11,4 +11,5 @@ export class User {
     phoneNumber?: number;
     photoURL?: string;
     roles?: Roles;
+    signUpDate: Date;
 }

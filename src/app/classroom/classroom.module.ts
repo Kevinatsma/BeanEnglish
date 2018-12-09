@@ -10,7 +10,7 @@ import { ClassroomComponent } from './classroom.component';
 import { AuthGuard } from '../core/auth/guards/auth.guard';
 import { ClassroomOverviewComponent } from './classroom-overview/classroom-overview.component';
 
-const routes: Routes = [
+const classroomRoutes: Routes = [
 // Classroom Module
 {
   path: '',
@@ -21,7 +21,7 @@ const routes: Routes = [
   path: 'classroom',
   component: ClassroomComponent,
   data: { state: 'classroom' },
-  canActivate: [AuthGuard],
+  // canActivate: [AuthGuard],
   children: [
     {
       path: '',
@@ -40,7 +40,7 @@ const routes: Routes = [
   declarations: [ClassroomComponent, ClassroomOverviewComponent],
   imports: [
     CommonModule,
-    RouterModule.forRoot(routes),
+    RouterModule.forChild(classroomRoutes),
     SharedModule
   ],
   exports: [

@@ -15,14 +15,15 @@ main.dashboard-wrapper {
 
         div.side-bar {
             height: 100%;
-            width: 20%;
+            width: auto;
             overflow-y: scroll;
         }
 
         div.classroom-router-output {
-            width: 80%;
-            height: 100%;
+            width: 60%;
+            height: calc(100% - 115px);
             overflow-y: scroll;
+            padding: 2em 10% 2em 5em;
         }
     }
 }

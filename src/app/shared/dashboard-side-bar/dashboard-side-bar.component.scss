@@ -1,9 +1,125 @@
 @import '_master';
 
+.toggle-btn {
+    position: absolute;
+    z-index: 10;
+    left: 19em;
+    top: 150px;
+    width: 50px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+
+    img {
+        width: 18px;
+        height: auto;
+    }
+
+    &.closed {
+        left: 0;
+
+        img {
+            transform: scaleX(-1);
+        }
+    }
+}
+
 .side-bar-container {
-    width: 100%;
+    width: 15em;
     height: 100%;
     overflow-y: scroll;
     background: #fff;
     box-shadow: $sidebar-shadow;
+    padding-top: 2em;
+    position: relative;
+
+    section.profile-header {
+        @extend %flex-column-center;
+        width: 100%;
+
+        div.profile-pic {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background-position: center!important;
+            background-size: cover!important;
+            border: 7px solid $primary-grey;
+        }
+
+        div.text-container {
+            text-align: center;
+
+            h2 {
+                font-size: 18px;
+                font-weight: $semi-bold;
+                color: $text-black;
+                margin: 0.5em 0 0 0;
+            }
+
+            p.subtitle-text {
+                font-size: 14px;
+                color: $grey;
+                font-weight: $regular;
+                margin: 0;
+            }
+        }
+    }
+
+    section.link-wrapper {
+        @extend %flex-column-center;
+        width: 100%;
+        height: auto;
+
+        h5 {
+            text-align: left;
+            width: 80%;
+            margin: 0.75em auto;
+        }
+
+        button.sidebar-icon-link {
+            @extend %flex-row-center;
+            justify-content: flex-start;
+            width: 100%;
+            height: 50px;
+            padding: 1em 2em;
+            margin: 0 auto;
+            font-weight: $regular;
+            font-size: 16px;
+
+            svg {
+                width: 25px;
+                font-size:  24px;
+                margin-right: 1.5em;
+                color: $secondary-color;
+            }
+
+            img {
+                width: 25px;
+                height: auto;
+                margin-right: 1.5em!important;
+            }
+
+            &:hover, &:focus, &.active {
+                font-family: $main-font;
+                background: $light-grey;
+                color: $brand-accent;
+                font-weight: $semi-bold;
+
+                svg {
+                    color: $brand-accent;
+                }
+
+            }
+        }
+    }
+
+    .btn-area {
+        margin-top: 25px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }
