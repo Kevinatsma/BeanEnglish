@@ -1,12 +1,20 @@
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 @import '_master';
 
+//////////////////
+//////////////////
+// General
+
 html, body {
     margin: 0;
     padding: 0;
     width: 100%;
     height: 100%;
     background-color: $primary-grey;
+}
+
+.mobile {
+    display: none;
 }
 
 
@@ -82,7 +90,34 @@ button {
 
     svg {
         color: $secondary-color;
-        margin-right: 20px;
+        margin-right: 2em;
+    }
+    
+
+    &:hover, &:focus, &:active {
+        background-color: $brand-accent;
+        color: #fff;
+        box-shadow: 0 0 0 rgba(255, 255, 255, 1);
+        // animation: pulse-blue 2s infinite;  
+
+        svg {
+            transition: all 300ms ease-in-out;
+            color: #fff;
+        }
+    }
+}
+
+.btn-icon-right {
+    @include round-btn;
+    color: #fff;
+    background: $secondary-color;
+    box-shadow: $btn-shadow;
+    padding: 5px 2em;
+    font-weight: $semi-bold;
+
+    svg {
+        color: #fff;
+        margin-left: 2em;
     }
     
 
@@ -417,4 +452,18 @@ form {
         margin-bottom: 5px;
     }
 
+}
+
+//////////////////
+//////////////////
+// Responsiveness
+
+@media only screen and (max-width: 768px) {
+    .mobile {
+        display: block;
+    }
+
+    .no-mobile {
+        display: none;
+    }
 }

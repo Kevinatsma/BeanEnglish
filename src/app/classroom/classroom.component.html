@@ -1,3 +1,19 @@
-<p>
-  classroom works!
-</p>
+<main class="dashboard-wrapper" *ngIf="(auth.user | async) || {} as user">
+    <section class="header">
+        <app-desktop-menu class="no-mobile"></app-desktop-menu>
+        <app-desktop-menu-mobile class="mobile"></app-desktop-menu-mobile>
+    </section>
+
+    <section class="main-content">
+        <div class="side-bar">
+            <app-dashboard-side-bar></app-dashboard-side-bar>
+        </div>
+    
+        <div class="classroom-router-output">
+            <router-outlet *ngIf="user.uid"></router-outlet>
+        </div>
+    </section>
+
+
+
+</main>

@@ -1,0 +1,30 @@
+@import '_master';
+
+.desktop-toolbar-top {
+    height: 100%;
+    width: 100%;
+    background: #fff;
+    box-shadow: $toolbar-shadow;
+    padding: 0;
+    margin: 0;
+
+    section.logo-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        width: 20%;
+        height: 102%;
+        background: #fff;
+    }
+
+    nav.nav-container {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: flex-end;
+        align-items: center;
+        width: 80%;
+        height: 100%;
+        padding: 0 2em 0 0;
+    }
+}
