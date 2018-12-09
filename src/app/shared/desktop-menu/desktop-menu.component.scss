@@ -14,19 +14,8 @@
         justify-content: center;
         position: relative;
         width: 20%;
-        height: 102%;
+        height: 100%;
         background: #fff;
-        
-        &::after {
-            content: '';
-            position: absolute;
-            height: 3px;
-            background: $primary-grey;
-            width: 80%;
-            bottom: 0;
-            left: 10%;
-            right: 10%;
-        }
     }
 
     nav.nav-container {
@@ -37,5 +26,21 @@
         width: 80%;
         height: 100%;
         padding: 0 2em 0 0;
+
+        a {
+            font-family: $main-font;
+            font-weight: $semi-bold;
+            color: $text-black;
+            font-size: 16px;
+            margin: 15px 2em 0;
+        }
+
+        button {
+            margin-left: 1em;
+            display: flex;
+            img {
+                margin-left: 1em;
+            }
+        }
     }
 }

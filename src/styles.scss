@@ -280,12 +280,15 @@ a {
 
     &.menu-link {
         position: relative;
+        padding-bottom: 1em;
     
         &:hover, &:focus, &:active, &:visited {
             color: $primary-color;
             transition: all 0.3s ease-in;
     
             &::after {
+                position: absolute;
+                top: 15px;
                 pointer-events: none;
                 width: 70%;
                 border-bottom: 1.8px solid $primary-color;
