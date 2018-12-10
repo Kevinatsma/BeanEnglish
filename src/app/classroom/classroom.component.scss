@@ -12,6 +12,7 @@ main.dashboard-wrapper {
         display: flex;
         height: calc(100vh - 115px);
         flex-flow: row nowrap;
+        overflow-y: hidden;
 
         div.side-bar {
             height: 100%;
@@ -21,9 +22,9 @@ main.dashboard-wrapper {
 
         div.classroom-router-output {
             width: 60%;
-            height: calc(100% - 115px);
+            height: 100%;
             overflow-y: scroll;
-            padding: 2em 10% 2em 5em;
+            padding: 2em 5% 2em 5em;
         }
     }
 }

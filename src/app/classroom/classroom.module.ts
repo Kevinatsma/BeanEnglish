@@ -21,7 +21,7 @@ const classroomRoutes: Routes = [
   path: 'classroom',
   component: ClassroomComponent,
   data: { state: 'classroom' },
-  // canActivate: [AuthGuard],
+  canActivate: [AuthGuard],
   children: [
     {
       path: '',
@@ -44,7 +44,7 @@ const classroomRoutes: Routes = [
     SharedModule
   ],
   exports: [
-
+    RouterModule
   ]
 })
 export class ClassroomModule { }

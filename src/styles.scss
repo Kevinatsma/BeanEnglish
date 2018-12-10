@@ -81,6 +81,21 @@ button {
     }
 }
 
+.btn-blue-outline {
+    @include round-btn;
+    color: $brand-blue;
+    border: 2px solid $brand-blue;
+    background-color: transparent;
+    
+
+    &:hover, &:focus, &:active {
+        background-color: $brand-blue;
+        color: $light-grey;
+        box-shadow: 0 0 0 rgba(255, 255, 255, 1);
+        // animation: pulse-blue 2s infinite;  
+    }
+}
+
 .btn-icon-left {
     @include round-btn;
     color: $grey;
@@ -262,8 +277,8 @@ p {
     &.card-text {
         margin: 0 auto;
         font-size: 14px;
-        color: $text-black;
-        font-weight: $regular;
+        color: $grey;
+        font-weight: $semi-bold;
     }
 }
 

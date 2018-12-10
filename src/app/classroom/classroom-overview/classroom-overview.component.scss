@@ -1,0 +1,90 @@
+@import '_master';
+
+main.overview-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.timeline {
+    position: absolute;
+    right: 5%;
+    top: 150px;
+    width: 5px;
+    background: #CCDCDC;
+    height: 80vh;
+}
+
+mat-card.course-card {
+    @extend %flex-column-center;
+    padding: 2em 0;
+    width: 45%;
+    height: auto;
+    margin-bottom: 2em;
+
+    &:nth-child(2n) {
+        margin-right: 10%;
+    }
+
+    section.icon-area {
+        width: 90%;
+        height: 180px;
+        background: url('./../../../assets/img/icons/icon-bg.svg');
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        margin: 1em auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    h1 {
+        margin: 0.5em auto 10px;
+    }
+
+    p.card-text {
+        width: 80%;
+        margin: 0 auto 2em;
+        text-align: center;
+    }
+
+    section.progress {
+        width: 100%;
+        position: relative;
+
+        .progress-bar {
+            height: 15px;
+            width: 90%;
+            margin: 2em auto 2em;
+            border-radius: 30px;
+            background: $primary-color;
+            position: relative;
+            
+            &.half-full {
+                background: $primary-grey;
+            }
+
+            .progress-filler {
+                position: absolute;
+                left: 0;
+                right: 60%;
+                bottom: 0;
+                top: 0;
+                background: $primary-color;
+                border-radius: 15px 0  0 15px;
+            }
+        }
+
+        p.small-text {
+            position: absolute; 
+            right: 10%;
+            top: 45px;
+            font-weight: $bold;
+            color: $primary-color;
+        }
+    }
+}
